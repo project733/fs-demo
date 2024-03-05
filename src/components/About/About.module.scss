@@ -1,0 +1,157 @@
+$desktop-width: 1440px;
+$padding: 10px;
+
+.section {
+  margin: 0 auto;
+  max-width: $desktop-width;
+  padding: calc($padding * 4);
+  @include font-size(18);
+  @include flexbox(row, stretch, stretch);
+  gap: calc($padding * 4);
+
+  .about {
+    width: 50%;
+
+    .ourteam {
+      @include font-size(24);
+    }
+  }
+
+  .chart {
+    width: 50%;
+    align-self: stretch;
+    position: relative;
+
+    canvas {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  h1 {
+    @include font-size(26);
+    padding-bottom: calc($padding * 4);
+  }
+
+  h3 {
+    @include font-size(24);
+    font-weight: $font-weight-light;
+    padding-bottom: calc($padding * 2);
+  }
+
+  p {
+    line-height: 1.5;
+    padding-bottom: calc($padding * 2);
+  }
+}
+
+.values {
+  margin: 0 auto;
+  padding-top: 40vh;
+  width: 50%;
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: block;
+    background-image: url('https://images.unsplash.com/photo-1610029795220-e5afca4dc7ba?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    height: 40vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    ;
+    z-index: -1;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      @include font-size(20);
+      font-weight: $font-weight-light;
+      line-height: 1.8;
+      padding: calc($padding * 5) 0;
+      opacity: 0;
+      animation: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 fadeInContent;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  h3 {
+    @include font-size(36);
+    font-weight: $font-weight-light;
+    padding-bottom: calc($padding * 3);
+  }
+}
+
+.services {
+  margin: 0 auto;
+  max-width: $desktop-width;
+  padding: calc($padding * 4);
+
+  h2 {
+    @include font-size(26);
+    padding-bottom: calc($padding * 4);
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0 auto;
+    @include flexbox(row, center, flex-end);
+    flex-wrap: wrap;
+    gap: $padding;
+
+    li {
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 9vw;
+      padding: 10vw 0 calc($padding * 4);
+      width: 24%;
+      text-align: center;
+    }
+
+    li:first-child {
+      background-image: url('../../assets/images/home_equity_loans.svg');
+    }
+    li:nth-of-type(2) {
+      background-image: url('../../assets/images/mortgage_refinancing.svg');
+    }
+    li:nth-of-type(3) {
+      background-image: url('../../assets/images/debt_consolidation.svg');
+    }
+    li:nth-of-type(4) {
+      background-image: url('../../assets/images/business_financing.svg');
+    }
+    li:nth-of-type(5) {
+      background-image: url('../../assets/images/major_purchases.svg');
+    }
+    li:nth-of-type(6) {
+      background-image: url('../../assets/images/fund_management.svg');
+    }
+    li:nth-of-type(7) {
+      background-image: url('../../assets/images/debt_management.svg');
+    }
+  }
+}
+
+@for $i from 1 through 3 {
+  .values ul > li:nth-of-type(#{$i}) {
+    animation-delay: #{0.5 + calc(($i) / 3)}s;
+  }
+}
+
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

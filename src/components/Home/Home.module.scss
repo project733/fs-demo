@@ -1,0 +1,339 @@
+$padding: 10px;
+$banner-title: #fff;
+$banner-text: #fff;
+$text-border: #000;
+$desktop-width: 1440px;
+
+/// Generate keyframes to be used in conjunction with  fadingSlideshow
+/// @param {Number} $maxNumSlides - The maximum number of slides in a slideshow to account for
+/// @param {Number} $timePerSlide - The amount of time each slide is exposed (note: includes fade in/out time)
+/// @param {Number} $transitionTime - The amount of time that the slide spends transitioning in (or out, not both)
+/// @param {String} $keyframeNS - The name to be used for the keyframes (should be unique each time this runs. Keyframes are global)
+/// @param {Number} $startAt - The index to be started at when building the keyframes (e.g. this can be called more than once but only generate the extra ones needed)
+/// @output '@keyframes'
+@mixin fadingSlideshowKeyframes($maxNumSlides: 6, $timePerSlide: 4s, $transitionTime: 1s, $keyframeNS: 'fadingSlideshow', $startAt: 2) {
+
+  // Amount of time that the slide is fully visible
+  $fullyVisible: (
+    $timePerSlide - ($transitionTime * 2)
+  );
+
+@for $totalSlides from $startAt through $maxNumSlides {
+
+  $totalTime: (
+    $fullyVisible + $transitionTime) * $totalSlides;
+
+  @for $i from 0 through $totalSlides - 2 {
+
+    // delay the animation to allow time that the first slide is exposed (does not have it's own animation)
+    $fadeIn: (
+      calc(($fullyVisible + ($transitionTime + $fullyVisible) * $i) / $totalTime) * 100%
+    );
+  $fullyIn: $fadeIn + calc($transitionTime / $totalTime) * 100%; // fade-in lasts 25% of the animation
+  $fadeOut: $fullyIn + calc($fullyVisible / $totalTime) * 100%; // fully visible for 50% of the animation
+  $fullyOut: $fadeOut + calc($transitionTime / $totalTime) * 100%; // fade-out lasts 25% of the animation;
+
+  @keyframes #{$keyframeNS}-slide#{$i+2}of#{$totalSlides} {
+    #{$fadeIn} {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #{$fullyIn} {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #{$fadeOut} {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #{$fullyOut} {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+}
+}
+
+/// Creates an auto-playing slideshow that fades between slides and loops
+/// @param {String} $slideSelector - The selector to use for the slides (this should be called on the direct parent)
+/// @param {Number} $maxNumSlides - The maximum number of slides in a slideshow to account for
+/// @param {Number} $timePerSlide - The amount of time each slide is exposed (note: includes fade in/out time)
+/// @param {Number} $transitionTime - The amount of time that the slide spends transitioning in (or out, not both)
+/// @param {String} $keyframeNS - The name to be used for the keyframes (should be unique each time this runs. Keyframes are global)
+/// @output 'position', 'top', 'left', 'opacity', 'animation-iteration-count', 'animation-delay', 'animation-duration', 'animation-name'
+@mixin fadingSlideshow($slideSelector, $maxNumSlides: 6, $timePerSlide: 8s, $transitionTime: 0.7s, $keyframeNS: 'fadingSlideshow') {
+  position: relative;
+
+  &:hover #{$slideSelector} {
+    animation-play-state: paused;
+  }
+
+  #{$slideSelector} {
+
+    // The first-child establishes the height/width and does not animate, so don't apply this stuff to it
+    &:not(:first-child) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      visibility: hidden;
+      animation-iteration-count: infinite;
+    }
+
+    @for $i from 2 through $maxNumSlides {
+
+      // Content Queries, to apply the correct timing for the correct number of slides
+      // When there are $i slides
+      &:nth-last-child(#{$i}):first-child ~ #{$slideSelector} {
+        animation-duration: ($timePerSlide - $transitionTime) * $i;
+
+        @for $j from 0 through $i {
+          @if($j + 2 <=$i) {
+            &:nth-child(#{$j + 2}) {
+              animation-name: #{$keyframeNS}-slide#{$j + 2}of#{$i};
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include fadingSlideshowKeyframes(3);
+
+.banner {
+  list-style-type: none;
+  position: relative;
+  min-height: 400px;
+  @include fadingSlideshow(li);
+
+  li {
+    position: relative;
+    min-height: 400px;
+    width: 100%;
+    @include flexbox(column, flex-end, flex-end);
+    position: absolute;
+
+    &:before {
+      content: '';
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-blend-mode: saturation;
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0;
+      animation: 0.8s ease-in 0s 1 fadeInBanner;
+      animation-fill-mode: forwards;
+    }
+
+    &:after {
+      background-color: #fff;
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+    }
+
+    &:first-child {
+      &:before {
+        background-image: linear-gradient(black, black), url('https://images.unsplash.com/photo-1620171784086-92b7ad39c23f?q=80&w=2698&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-position-y: center;
+        filter: sepia(75%) saturate(328%) hue-rotate(350deg) brightness(54%) contrast(162%);
+      }
+
+      .content:after {
+        background-color: $corp-blue3;
+      }
+    }
+
+    &:nth-child(2) {
+      &:before {
+        background-image: linear-gradient(black, black), url('https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?q=80&w=2372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-position-y: -460px;
+        filter: sepia(75%) saturate(428%) hue-rotate(167deg) brightness(54%) contrast(262%);
+      }
+
+      .content:after {
+        background-color: $corp-blue2;
+      }
+    }
+
+    &:nth-child(3) {
+      &:before {
+        background-image: linear-gradient(black, black), url('https://plus.unsplash.com/premium_photo-1661964217455-4131158dbd78?q=80&w=3060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-position-y: center;
+        filter: grayscale(90%) brightness(70%);
+      }
+
+      .content:after {
+        background-color: $corp-blue3;
+      }
+    }
+  }
+
+  .content {
+    margin: 0 auto;
+    max-width: $desktop-width;
+    @include flexbox(column, flex-end, flex-start);
+    padding: calc($padding * 2) calc($padding * 4);
+    position: relative;
+    opacity: 0;
+    animation: 0.8s ease-in 0s 1 fadeInContent;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      opacity: 0.6;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  h2 {
+    color: $banner-title;
+    @include font-size(40);
+    font-weight: $font-weight-light;
+    padding-bottom: $padding;
+    opacity: 0;
+    animation: 1.3s cubic-bezier(0.075, 0.82, 0.165, 1) 1s 1 slideInLeft;
+    animation-fill-mode: both;
+  }
+
+  p {
+    color: $banner-text;
+    @include font-size(18);
+    line-height: 1.5;
+    opacity: 0;
+    animation: 1.3s cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s 1 slideInLeft;
+    animation-fill-mode: both;
+
+    @include mq($from: small-screen) {
+      width: 50%;
+    }
+  }
+}
+
+.bar {
+  background-color: $corp-blue3;
+}
+
+.loansfunds {
+  margin: 0 auto;
+  max-width: $desktop-width;
+  padding: calc($padding * 2) calc($padding * 4);
+  @include flexbox(row, center, flex-start);
+  text-align: center;
+
+  > div {
+    width: 50%;
+    color: #fff;
+    line-height: 1.5;
+
+    h3 {
+      @include font-size(20);
+    }
+
+    p {
+      @include font-size(36);
+    }
+  }
+}
+
+.numbers {
+  line-height: 1;
+  overflow: hidden;
+
+  .numbers__window {
+    display: inline-block;
+    overflow: hidden;
+    width: 1.5rem;
+    height: 1.9rem;
+
+    .numbers__window__digit {
+      word-break: break-all;
+      display: block;
+      width: 0;
+      padding: 0 1.4rem 0 0;
+      margin: 0 auto;
+      overflow: inherit;
+      animation: counting 0.6s steps(10) forwards infinite;
+
+      &:before {
+        content: attr(data-fake);
+        display: inline-block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .numbers__window__digit1 {
+      animation-iteration-count: 3;
+    }
+
+    .numbers__window__digit2 {
+      animation-iteration-count: 4;
+    }
+  }
+}
+
+@keyframes counting {
+  100% {
+    transform: translate3d(0, -10em, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInBanner {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

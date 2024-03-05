@@ -1,0 +1,14 @@
+$padding: 10px;
+
+.header {
+  padding: $padding;
+  @include flexbox(row, flex-start, center);
+  gap: $padding;
+
+  :global {
+    .title {
+      @include font-size(30);
+      font-weight: $font-weight-regular;
+    }
+  }
+}

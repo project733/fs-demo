@@ -1,0 +1,24 @@
+.visuallyhidden {
+  @include visually-hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include text-format($font-family-roboto,
+    $font-weight-light,
+    20,
+    $font-color );
+
+    a {
+      color: $corp-blue;
+    }
+}
+
+.noscrollbar {
+  @include mq($from: desktop) {
+    @include hide-scrollbars;
+  }
+}

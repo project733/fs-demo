@@ -1,0 +1,68 @@
+$desktop-width: 1440px;
+$padding: 10px;
+
+.brands {
+  margin: 0 auto;
+  max-width: $desktop-width;
+  padding: calc($padding * 4);
+
+  h2 {
+    @include font-size(26);
+    padding-bottom: calc($padding * 2);
+  }
+
+  p {
+    @include font-size(18);
+    padding-bottom: calc($padding * 4);
+  }
+
+  .tiles {
+    list-style-type: none;
+    @include flexbox(row, flex-start, stretch);
+    flex-wrap: wrap;
+
+    li {
+      border: 1px solid #fff;
+      width: 25%;
+      overflow: hidden;
+      opacity: 0;
+      animation: 1.3s cubic-bezier(0.075, 0.82, 0.165, 1) 5s 1 fadeInContent;
+      animation-fill-mode: forwards;
+
+      &:hover img {
+        transform: scale(1.5);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+.see_all {
+  padding-top: calc($padding * 5);
+  text-align: center;
+
+  a {
+    @include font-size(24);
+  }
+}
+
+@for $i from 1 through 8 {
+  .tiles > li:nth-of-type(#{$i}) {
+    animation-delay: #{1.5 + calc(($i) / 3.5)}s;
+  }
+}
+
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

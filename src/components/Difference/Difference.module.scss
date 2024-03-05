@@ -1,0 +1,18 @@
+$desktop-width: 1440px;
+$padding: 10px;
+
+.difference {
+  margin: 0 auto;
+  max-width: $desktop-width;
+  padding: calc($padding * 4);
+
+  h1 {
+    @include font-size(26);
+    padding-bottom: calc($padding * 4);
+  }
+
+  p {
+    line-height: 1.5;
+    padding-bottom: calc($padding * 2);
+  }
+}

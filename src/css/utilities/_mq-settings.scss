@@ -1,0 +1,14 @@
+// mq-documentation and examples
+// https://github.com/sass-mq/sass-mq
+
+@import "sass-mq/mq.import";
+
+$mq-breakpoints: (
+    tablet: 481px, // 481px - 768px: iPads, tablets
+    small-screen: 960px, // 960px - 1024px: Small screens, laptops
+    desktop: 1025px, // 1025px - 1200px: Desktops, large screens
+    wide: 1201px, // 1201px and more: Extra wide screens, TV
+
+    // Tweakpoints
+    wide2: 1400px
+);

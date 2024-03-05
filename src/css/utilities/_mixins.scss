@@ -1,0 +1,60 @@
+@mixin visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+@mixin font-size($pixel-value) {
+    $base: 16;
+    font-size: calc($pixel-value / $base) + rem;
+}
+
+@mixin text-format($family, $weight, $pixel-value, $color, $line-height: 1) {
+    font-family: $family;
+    font-weight: $weight;
+    @include font-size($pixel-value);
+    color: $color;
+    line-height: $line-height;
+}
+
+@mixin truncate-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Flexbox
+@mixin flexbox($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Hide scrollbars but keep functionality
+@mixin hide-scrollbars {
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+// Box shadow
+@mixin box-shadow($x: 1px, $y: 1px, $blur: 3px, $spread: 2px, $opacity: 0.3) {
+    box-shadow: $x $y $blur $spread rgba(0, 0, 0, $opacity);
+}
+
+// Slide up background
+@mixin slide-background($start: #333, $finish: #333) {
+    background: linear-gradient(to bottom, $start 50%, $finish 50%);
+}
+
+// Text border
+@mixin text-border($color) {
+    text-shadow: -1px 1px 0 $color, 1px 1px 0 $color, 1px -1px $color, -1px -1px 0 $color;
+}

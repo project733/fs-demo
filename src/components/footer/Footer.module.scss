@@ -1,0 +1,8 @@
+$padding: 10px;
+
+.footer {
+  background-color: $corp-blue3;
+  color: #fff;
+  @include font-size(18);
+  padding: calc($padding * 4);
+}
