@@ -38,7 +38,7 @@ export const Brands = () => {
           <li id="brand-1">
             <figure>
               <a
-                href="/what-we-do/xyzcapital"
+                href="/fs-demo/what-we-do/xyzcapital"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -67,7 +67,7 @@ export const Brands = () => {
                 </p>
                 <p>
                   <a
-                    href="/what-we-do/xyzcapital"
+                    href="/fs-demo/what-we-do/xyzcapital"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -117,7 +117,7 @@ export const Brands = () => {
           <li id="brand-2">
             <figure>
               <a
-                href="/what-we-do/xyzcapital"
+                href="/fs-demo/what-we-do/xyzcapital"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -137,7 +137,7 @@ export const Brands = () => {
                 </p>
                 <p>
                   <a
-                    href="/what-we-do/xyzcapital"
+                    href="/fs-demo/what-we-do/xyzcapital"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -150,7 +150,7 @@ export const Brands = () => {
           <li id="brand-3">
             <figure>
               <a
-                href="/what-we-do/xyzcapital"
+                href="/fs-demo/what-we-do/xyzcapital"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -182,7 +182,7 @@ export const Brands = () => {
                 </p>
                 <p>
                   <a
-                    href="/what-we-do/xyzcapital"
+                    href="/fs-demo/what-we-do/xyzcapital"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -201,7 +201,7 @@ export const Brands = () => {
             <li id="brand-4">
               <figure>
                 <a
-                  href="/what-we-do/xyzcapital"
+                  href="/fs-demo/what-we-do/xyzcapital"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -229,7 +229,7 @@ export const Brands = () => {
                   </p>
                   <p>
                     <a
-                      href="/what-we-do/xyzcapital"
+                      href="/fs-demo/what-we-do/xyzcapital"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -242,7 +242,7 @@ export const Brands = () => {
             <li id="brand-5">
               <figure>
                 <a
-                  href="/what-we-do/xyzcapital"
+                  href="/fs-demo/what-we-do/xyzcapital"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -267,7 +267,7 @@ export const Brands = () => {
                   </p>
                   <p>
                     <a
-                      href="/what-we-do/xyzcapital"
+                      href="/fs-demo/what-we-do/xyzcapital"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -280,7 +280,7 @@ export const Brands = () => {
             <li id="brand-6">
               <figure>
                 <a
-                  href="/what-we-do/xyzcapital"
+                  href="/fs-demo/what-we-do/xyzcapital"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -306,7 +306,7 @@ export const Brands = () => {
                   </p>
                   <p>
                     <a
-                      href="/what-we-do/xyzcapital"
+                      href="/fs-demo/what-we-do/xyzcapital"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -322,7 +322,7 @@ export const Brands = () => {
             <li id="brand-7">
               <figure>
                 <a
-                  href="/what-we-do/xyzcapital"
+                  href="/fs-demo/what-we-do/xyzcapital"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -340,7 +340,7 @@ export const Brands = () => {
                   </p>
                   <p>
                     <a
-                      href="/what-we-do/xyzcapital"
+                      href="/fs-demo/what-we-do/xyzcapital"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

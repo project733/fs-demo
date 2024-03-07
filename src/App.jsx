@@ -46,24 +46,26 @@ export const App = () => {
             <XYZHeader />
             <ul className={styles.nav}>
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/fs-demo">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/about-us">Who We Are</NavLink>
+                <NavLink to="/fs-demo/about-us">Who We Are</NavLink>
                 <ul>
                   <li>
-                    <NavLink to="/about-us/our-team">Our Team</NavLink>
+                    <NavLink to="/fs-demo/about-us/our-team">Our Team</NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to="/what-we-do">What We Do</NavLink>
+                <NavLink to="/fs-demo/what-we-do">What We Do</NavLink>
               </li>
               <li>
-                <NavLink to="/how-we-can-help">Our Social Impact</NavLink>
+                <NavLink to="/fs-demo/how-we-can-help">
+                  Our Social Impact
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/contact-us">Contact Us</NavLink>
+                <NavLink to="/fs-demo/contact-us">Contact Us</NavLink>
               </li>
             </ul>
           </nav>
@@ -73,13 +75,16 @@ export const App = () => {
       )}
       <main className={styles.container}>
         <Routes>
-          <Route path="/" element={<Home />} exact />
-          <Route path="about-us" element={<About />} />
-          <Route path="about-us/our-team" element={<Team />} />
-          <Route path="what-we-do" element={<Brands />} />
-          <Route path="what-we-do/xyzcapital" element={<Xyzcapital />} />
-          <Route path="how-we-can-help" element={<Difference />} />
-          <Route path="contact-us" element={<Contact />} />
+          <Route path="fs-demo/" element={<Home />} exact />
+          <Route path="fs-demo/about-us" element={<About />} />
+          <Route path="fs-demo/about-us/our-team" element={<Team />} />
+          <Route path="fs-demo/what-we-do" element={<Brands />} />
+          <Route
+            path="fs-demo/what-we-do/xyzcapital"
+            element={<Xyzcapital />}
+          />
+          <Route path="fs-demo/how-we-can-help" element={<Difference />} />
+          <Route path="fs-demo/contact-us" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

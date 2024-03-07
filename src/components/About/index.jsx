@@ -58,7 +58,7 @@ export const About = () => {
               munditiem.
             </p>
             <p className={styles.ourteam}>
-              <a href="/about-us/our-team">Learn about Our Team</a>
+              <a href="/fs-demo/about-us/our-team">Learn about Our Team</a>
             </p>
           </div>
           <div className={styles.chart}>
