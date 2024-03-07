@@ -60,6 +60,17 @@ export const Home = () => {
                     1
                   </span>
                 </span>
+              </span>
+              .
+              <span className={styles.numbers}>
+                <span className={styles.numbers__window}>
+                  <span
+                    className={`${styles.numbers__window__digit} ${styles.numbers__window__digit2}`}
+                    data-fake="5207186394"
+                  >
+                    3
+                  </span>
+                </span>
               </span>{" "}
               Billion
             </p>
