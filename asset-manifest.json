@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/projects/fs-demo/static/css/main.b27712b4.css",
+    "main.js": "/projects/fs-demo/static/js/main.4f23f4b0.js",
+    "static/js/787.1bd667dd.chunk.js": "/projects/fs-demo/static/js/787.1bd667dd.chunk.js",
+    "index.html": "/projects/fs-demo/index.html",
+    "static/media/major_purchases.svg": "/projects/fs-demo/static/media/major_purchases.d9ab873493e5864ba8c3.svg",
+    "static/media/home_equity_loans.svg": "/projects/fs-demo/static/media/home_equity_loans.4782b77253b0b9ea6bcf.svg",
+    "static/media/debt_management.svg": "/projects/fs-demo/static/media/debt_management.e2276154e0933d5fc83c.svg",
+    "static/media/mortgage_refinancing.svg": "/projects/fs-demo/static/media/mortgage_refinancing.6ecf743bafe7cf1a7fd3.svg",
+    "static/media/debt_consolidation.svg": "/projects/fs-demo/static/media/debt_consolidation.9fb036e2e4805dd7b960.svg",
+    "static/media/fund_management.svg": "/projects/fs-demo/static/media/fund_management.4effe9fab3654352230c.svg",
+    "static/media/business_financing.svg": "/projects/fs-demo/static/media/business_financing.2c6396485921c312e88f.svg",
+    "main.b27712b4.css.map": "/projects/fs-demo/static/css/main.b27712b4.css.map",
+    "main.4f23f4b0.js.map": "/projects/fs-demo/static/js/main.4f23f4b0.js.map",
+    "787.1bd667dd.chunk.js.map": "/projects/fs-demo/static/js/787.1bd667dd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b27712b4.css",
+    "static/js/main.4f23f4b0.js"
+  ]
+}
