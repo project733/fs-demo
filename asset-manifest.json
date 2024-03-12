@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fs-demo/static/css/main.454f3cd9.css",
-    "main.js": "/fs-demo/static/js/main.108e0ea9.js",
+    "main.js": "/fs-demo/static/js/main.7e4ef0d1.js",
     "static/js/787.1bd667dd.chunk.js": "/fs-demo/static/js/787.1bd667dd.chunk.js",
     "static/media/major_purchases.svg": "/fs-demo/static/media/major_purchases.d9ab873493e5864ba8c3.svg",
     "index.html": "/fs-demo/index.html",
@@ -12,11 +12,11 @@
     "static/media/fund_management.svg": "/fs-demo/static/media/fund_management.4effe9fab3654352230c.svg",
     "static/media/business_financing.svg": "/fs-demo/static/media/business_financing.2c6396485921c312e88f.svg",
     "main.454f3cd9.css.map": "/fs-demo/static/css/main.454f3cd9.css.map",
-    "main.108e0ea9.js.map": "/fs-demo/static/js/main.108e0ea9.js.map",
+    "main.7e4ef0d1.js.map": "/fs-demo/static/js/main.7e4ef0d1.js.map",
     "787.1bd667dd.chunk.js.map": "/fs-demo/static/js/787.1bd667dd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.454f3cd9.css",
-    "static/js/main.108e0ea9.js"
+    "static/js/main.7e4ef0d1.js"
   ]
 }
