@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ScrollIntoView } from "../../hooks/ScrollIntoView";
 
 import styles from "./Brands.module.scss";
@@ -37,8 +38,8 @@ export const Brands = () => {
         <ul>
           <li id="brand-1">
             <figure>
-              <a
-                href="/fs-demo/what-we-do/xyzcapital"
+              <Link
+                to="/what-we-do/xyzcapital"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -46,7 +47,7 @@ export const Brands = () => {
                   src="https://placehold.co/250x250"
                   alt="XYZ Financial Group"
                 />
-              </a>
+              </Link>
               <figcaption>
                 <h3>Fronte Aquilac</h3>
                 <p>
@@ -58,7 +59,7 @@ export const Brands = () => {
                   leo rerum memento regressum mi amet. Arcu utinam louor modi
                   Iustam Laoreet non vel iaculis per meritum sem vel a oppressus
                   te cumque error iure aut platea at dicta eros; praevenire ut
-                  mus, option eu animus castigo. Eiusdem hic ipsum cum class
+                  mus, option eu animus castigo. Eiusdem hic ipsum sum class
                   vero est diam desiderabilis, vero memorabilem ad adversis
                   felices - il non rem usus quae eum rem MODERNAS!
                 </p>
@@ -66,13 +67,13 @@ export const Brands = () => {
                   Vindica Posterum Obesse Scomata #12616 / Atque Prosunt #12617
                 </p>
                 <p>
-                  <a
-                    href="/fs-demo/what-we-do/xyzcapital"
+                  <Link
+                    to="/what-we-do/xyzcapital"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     VIEW WEBSITE
-                  </a>
+                  </Link>
                   <button
                     className="view-videos"
                     onClick={() => scrollToBrand(1)}
@@ -116,8 +117,8 @@ export const Brands = () => {
           </li>
           <li id="brand-2">
             <figure>
-              <a
-                href="/fs-demo/what-we-do/xyzcapital"
+              <Link
+                to="/what-we-do/xyzcapital"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -125,32 +126,32 @@ export const Brands = () => {
                   src="https://placehold.co/250x250"
                   alt="XYZ Financial Group"
                 />
-              </a>
+              </Link>
               <figcaption>
                 <h3>Reprobum Ultimus</h3>
                 <p>
                   Commodum Patitur ut w claritas nostris regnandi populo
                   sollemnes mi saevuli recompensa magnae est fortem et optio
                   rerum debetur w morbi, gallicismum, rem dcfensionem mercede.
-                  Per celeritas sed certum mus tesiimonium. Cum placeat in ut ad
+                  Per celeritas sed certum mus tesiimonium. Sum placeat in ut ad
                   est modulumina oceani in perltum tenetur contraxit.
                 </p>
                 <p>
-                  <a
-                    href="/fs-demo/what-we-do/xyzcapital"
+                  <Link
+                    to="/what-we-do/xyzcapital"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     VIEW WEBSITE
-                  </a>
+                  </Link>
                 </p>
               </figcaption>
             </figure>
           </li>
           <li id="brand-3">
             <figure>
-              <a
-                href="/fs-demo/what-we-do/xyzcapital"
+              <Link
+                to="/what-we-do/xyzcapital"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -158,7 +159,7 @@ export const Brands = () => {
                   src="https://placehold.co/250x250"
                   alt="XYZ Financial Group"
                 />
-              </a>
+              </Link>
               <figcaption>
                 <h3>Conferre Ordinem</h3>
                 <p>
@@ -171,23 +172,23 @@ export const Brands = () => {
                   occurent spirans mus quasi dimittere significatio hungariae
                   castrorum, cras pungit mazim nam esse inscio totam et potest
                   ut tot atque est mus spiritu et sit intestinum. Egestam quo
-                  cum o illud-nisi modo eodem, ea hibernorum virtutis
+                  sum o illud-nisi modo eodem, ea hibernorum virtutis
                   centimanos, interest w eros, proprium quod tempore occurent,
                   aetrimentum quos nascetur in odio hic maiori dui contumeliam
                   ex conditionibus lacus, il at fugientes ut quos conscios
                   praefixionem quarta! Orci in unanimi nibh Aspirare Dapibus hac
                   ea hic nam, liber salubre odit leo pereunt me quam debila et
                   moderno est sunt prandium consilio aut hac. redundat salutis -
-                  li non mus nemo modo cum cum OPPRESSA!
+                  li non mus nemo modo sumn sum OPPRESSA!
                 </p>
                 <p>
-                  <a
-                    href="/fs-demo/what-we-do/xyzcapital"
+                  <Link
+                    to="/what-we-do/xyzcapital"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     VIEW WEBSITE
-                  </a>
+                  </Link>
                 </p>
               </figcaption>
             </figure>
@@ -200,8 +201,8 @@ export const Brands = () => {
           <ul>
             <li id="brand-4">
               <figure>
-                <a
-                  href="/fs-demo/what-we-do/xyzcapital"
+                <Link
+                  to="/what-we-do/xyzcapital"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -209,7 +210,7 @@ export const Brands = () => {
                     src="https://placehold.co/250x250"
                     alt="XYZ Financial Group"
                   />
-                </a>
+                </Link>
                 <figcaption>
                   <h3>SEM Potenti Proper Quae</h3>
                   <p>
@@ -228,21 +229,21 @@ export const Brands = () => {
                     daniae.
                   </p>
                   <p>
-                    <a
-                      href="/fs-demo/what-we-do/xyzcapital"
+                    <Link
+                      to="/what-we-do/xyzcapital"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       VIEW WEBSITE
-                    </a>
+                    </Link>
                   </p>
                 </figcaption>
               </figure>
             </li>
             <li id="brand-5">
               <figure>
-                <a
-                  href="/fs-demo/what-we-do/xyzcapital"
+                <Link
+                  to="/what-we-do/xyzcapital"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -250,7 +251,7 @@ export const Brands = () => {
                     src="https://placehold.co/250x250"
                     alt="XYZ Financial Group"
                   />
-                </a>
+                </Link>
                 <figcaption>
                   <h3>SED Directi Subordinatos Duorum Quod</h3>
                   <p>
@@ -266,21 +267,21 @@ export const Brands = () => {
                     consternatus sed d tantum axioma.
                   </p>
                   <p>
-                    <a
-                      href="/fs-demo/what-we-do/xyzcapital"
+                    <Link
+                      to="/what-we-do/xyzcapital"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       VIEW WEBSITE
-                    </a>
+                    </Link>
                   </p>
                 </figcaption>
               </figure>
             </li>
             <li id="brand-6">
               <figure>
-                <a
-                  href="/fs-demo/what-we-do/xyzcapital"
+                <Link
+                  to="/what-we-do/xyzcapital"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -288,7 +289,7 @@ export const Brands = () => {
                     src="https://placehold.co/250x250"
                     alt="XYZ Financial Group"
                   />
-                </a>
+                </Link>
                 <figcaption>
                   <h3>SEM Baltico Erat Justo Quae</h3>
                   <p>
@@ -300,18 +301,18 @@ export const Brands = () => {
                     silentium. SEM'p antecedenti fridericus formastis at id
                     eiusdem modi-eget meritis necessitatem ferrens constantiam
                     wisi liber iure forsan ulteriori. Odoratus qui generatio mus
-                    eos existit mi crimen ea benevolam deorum ut modi, CUM porro
+                    eos existit mi crimen ea benevolam deorum ut modi, SUM porro
                     at mentis in verius etiam meruerunt quae supremi morbi &
                     securus departitionem.
                   </p>
                   <p>
-                    <a
-                      href="/fs-demo/what-we-do/xyzcapital"
+                    <Link
+                      to="/what-we-do/xyzcapital"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       VIEW WEBSITE
-                    </a>
+                    </Link>
                   </p>
                 </figcaption>
               </figure>
@@ -321,8 +322,8 @@ export const Brands = () => {
           <ul>
             <li id="brand-7">
               <figure>
-                <a
-                  href="/fs-demo/what-we-do/xyzcapital"
+                <Link
+                  to="/what-we-do/xyzcapital"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -330,7 +331,7 @@ export const Brands = () => {
                     src="https://placehold.co/250x250"
                     alt="XYZ Financial Group"
                   />
-                </a>
+                </Link>
                 <figcaption>
                   <h3>SEM Felices Charybdium Caesarianis</h3>
                   <p>
@@ -339,13 +340,13 @@ export const Brands = () => {
                     Cubilia Diabolum quo Regalia.
                   </p>
                   <p>
-                    <a
-                      href="/fs-demo/what-we-do/xyzcapital"
+                    <Link
+                      to="/what-we-do/xyzcapital"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       VIEW WEBSITE
-                    </a>
+                    </Link>
                   </p>
                 </figcaption>
               </figure>

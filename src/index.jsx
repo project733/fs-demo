@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, useLocation } from "react-router-dom";
+import { HashRouter as Router, useLocation } from "react-router-dom";
 
 import "./css/global.scss";
 
@@ -19,6 +19,7 @@ const ScrollToTop = () => {
 
 root.render(
   <React.StrictMode>
+    {/* <Router basename={ `/${process.env.PUBLIC_URL}` }> */ }
     <Router>
       <ScrollToTop />
       <App />

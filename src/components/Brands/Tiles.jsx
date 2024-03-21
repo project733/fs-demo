@@ -1,4 +1,8 @@
+import { Link } from 'react-router-dom';
+
 import styles from "./Tiles.module.scss";
+
+// const basename = "/fs-demo";
 
 export const BrandTiles = () => {
   return (
@@ -10,47 +14,47 @@ export const BrandTiles = () => {
       </p>
       <ul className={styles.tiles}>
         <li>
-          <a
-            href="/fs-demo/what-we-do/xyzcapital"
+          <Link
+            to="/what-we-do/xyzcapital"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src="https://placehold.co/250x250" alt="XYZ Financial Group" />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/fs-demo">
+          <Link to="/">
             <img src="https://placehold.co/250x250" alt="XYZ Financial Group" />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/fs-demo">
+          <Link to="/">
             <img src="https://placehold.co/250x250" alt="XYZ Financial Group" />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/fs-demo">
+          <Link to="/">
             <img src="https://placehold.co/250x250" alt="XYZ Financial Group" />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/fs-demo">
+          <Link to="/">
             <img src="https://placehold.co/250x250" alt="XYZ Financial Group" />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/fs-demo">
+          <Link to="/">
             <img src="https://placehold.co/250x250" alt="XYZ Financial Group" />
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/fs-demo">
+          <Link to="/">
             <img src="https://placehold.co/250x250" alt="XYZ Financial Group" />
-          </a>
+          </Link>
         </li>
       </ul>
       <p className={styles.see_all}>
-        <a href="/fs-demo/what-we-do">See all our solutions</a>
+        <Link to="/what-we-do">See all our solutions</Link>
       </p>
     </div>
   );

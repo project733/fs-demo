@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { BarChart } from "./BarChart";
 import { BrandTiles } from "../Brands/Tiles";
 import { ScrollIntoView } from "../../hooks/ScrollIntoView";
@@ -58,7 +59,7 @@ export const About = () => {
               munditiem.
             </p>
             <p className={styles.ourteam}>
-              <a href="/fs-demo/about-us/our-team">Learn about Our Team</a>
+              <Link to="/about-us/our-team">Learn about Our Team</Link>
             </p>
           </div>
           <div className={styles.chart}>

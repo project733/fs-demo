@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, NavLink, useLocation } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { Footer } from "./components/footer";
 import { XYZHeader } from "./components/header";
 import { XCAPHeader } from "./components/header/xcap";
@@ -7,7 +7,7 @@ import { Home } from "./components/Home";
 import { About } from "./components/About";
 import { Team } from "./components/About/Team";
 import { Brands } from "./components/Brands";
-import { Xyzcapital } from './components/Brands/xyzcapital';
+import { XYZcapital } from "./components/Brands/XYZCapital";
 import { Difference } from "./components/Difference";
 import { Contact } from "./components/Contact";
 
@@ -46,26 +46,24 @@ export const App = () => {
             <XYZHeader />
             <ul className={styles.nav}>
               <li>
-                <NavLink to="/fs-demo">Home</NavLink>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <NavLink to="/fs-demo/about-us">Who We Are</NavLink>
+                <Link to="/about-us">Who We Are</Link>
                 <ul>
                   <li>
-                    <NavLink to="/fs-demo/about-us/our-team">Our Team</NavLink>
+                    <Link to="/about-us/our-team">Our Team</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to="/fs-demo/what-we-do">What We Do</NavLink>
+                <Link to="/what-we-do">What We Do</Link>
               </li>
               <li>
-                <NavLink to="/fs-demo/how-we-can-help">
-                  Our Social Impact
-                </NavLink>
+                <Link to="/how-we-can-help">Our Social Impact</Link>
               </li>
               <li>
-                <NavLink to="/fs-demo/contact-us">Contact Us</NavLink>
+                <Link to="/contact-us">Contact Us</Link>
               </li>
             </ul>
           </nav>
@@ -75,16 +73,13 @@ export const App = () => {
       )}
       <main className={styles.container}>
         <Routes>
-          <Route path="fs-demo/" element={<Home />} exact />
-          <Route path="fs-demo/about-us" element={<About />} />
-          <Route path="fs-demo/about-us/our-team" element={<Team />} />
-          <Route path="fs-demo/what-we-do" element={<Brands />} />
-          <Route
-            path="fs-demo/what-we-do/xyzcapital"
-            element={<Xyzcapital />}
-          />
-          <Route path="fs-demo/how-we-can-help" element={<Difference />} />
-          <Route path="fs-demo/contact-us" element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/about-us/our-team" element={<Team />} />
+          <Route path="/what-we-do" element={<Brands />} />
+          <Route path="/what-we-do/xyzcapital" element={<XYZcapital />} />
+          <Route path="/how-we-can-help" element={<Difference />} />
+          <Route path="/contact-us" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
